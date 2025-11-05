@@ -7,16 +7,16 @@ public class MapperEmployee {
     public static Employee mapTOEmployee(DtoEmployee dtoEmployee){
          return new Employee(
                 dtoEmployee.getId(),
-                dtoEmployee.getFirstname(),
-                dtoEmployee.getLastname(),
+                dtoEmployee.getFirstName(),
+                dtoEmployee.getLastName(),
                 dtoEmployee.getEmail()
         );
     }
     public static DtoEmployee mapToDtoEmployee(Employee employee){
         return new DtoEmployee(
                 employee.getId(),
-                employee.getFirstname(),
-                employee.getLastname(),
+                employee.getFirstName(),
+                employee.getLastName(),
                 employee.getEmail()
         );
     }

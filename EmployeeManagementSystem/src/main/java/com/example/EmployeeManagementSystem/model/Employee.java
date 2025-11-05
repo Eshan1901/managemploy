@@ -8,21 +8,22 @@ import jakarta.persistence.*;
 @Table(name = "employees")
 public class Employee {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(name = "first_name",nullable = false)
-    private String firstname;
+    private String firstName;
     @Column(name ="last_name")
-    private String lastname;
+    private String lastName;
     @Column(name = "email",nullable = false)
     private String email;
 
     public Employee() {
     }
 
-    public Employee(int id, String firstname, String lastname, String email) {
+    public Employee(int id, String firstName, String lastName, String email) {
         this.id = id;
-        this.firstname = firstname;
-        this.lastname = lastname;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
     }
 
@@ -34,27 +35,27 @@ public class Employee {
         this.id = id;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public String getLastName() {
+        return lastName;
     }
 
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
         return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

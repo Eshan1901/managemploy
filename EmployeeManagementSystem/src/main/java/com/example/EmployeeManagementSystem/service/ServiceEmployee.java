@@ -44,8 +44,8 @@ public class ServiceEmployee implements ServiceEmployeeIn{
     public DtoEmployee updateEmployee(int id, DtoEmployee updatedemployee) {
         Employee employee=repositoryEmployee.findById(id).orElseThrow(
                 ()->new ExceptionEmployee("The Employee is not exist or found by given id" +id));
-        employee.setFirstname(updatedemployee.getFirstname());
-        employee.setLastname(updatedemployee.getLastname());
+        employee.setFirstName(updatedemployee.getFirstName());
+        employee.setLastName(updatedemployee.getLastName());
         employee.setEmail(updatedemployee.getEmail());
         return MapperEmployee.mapToDtoEmployee(repositoryEmployee.save(employee));
     }
